@@ -1,0 +1,11 @@
+{
+  "name": "@kleros/governor-v2-tsconfig",
+  "version": "2.0.0",
+  "private": true,
+  "files": [
+    "base.json"
+  ],
+  "devDependencies": {
+    "@kleros/governor-v2-eslint-config": "*"
+  }
+}
