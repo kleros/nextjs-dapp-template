@@ -1,5 +1,4 @@
-
-# governor-v2
+# Nextjs-dapp-template
 
 Setup:
 
@@ -13,4 +12,3 @@ The frontend is located in the `web` folder
 cd web
 yarn && yarn start
 ```
-

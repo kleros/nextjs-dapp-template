@@ -2,7 +2,7 @@ import { readdir, readFile } from "fs/promises";
 import { parse, join } from "path";
 import { ContractConfig } from "@wagmi/cli";
 import { Abi } from "viem";
-import { Chain } from "@wagmi/chains";
+import { Chain } from "viem/chains";
 
 type ArtifactPartial = {
   abi: Abi;
@@ -13,7 +13,7 @@ export const getAbi = (artifact: any) => {
 };
 
 export const readArtifacts = async (viemChainName: string, hardhatChainName?: string) => {
-  const chains = await import("wagmi/chains");
+  const chains = await import("viem/chains");
   const chain = chains[viemChainName] as Chain;
   if (!chain) {
     throw new Error(`Viem chain ${viemChainName} not found`);

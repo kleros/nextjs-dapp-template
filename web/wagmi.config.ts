@@ -1,8 +1,9 @@
-import { type Config, type ContractConfig, defineConfig } from "@wagmi/cli";
-import { react, actions } from "@wagmi/cli/plugins";
 import { readdir, readFile } from "fs/promises";
 import { parse, join } from "path";
-import { Chain } from "wagmi/chains";
+
+import { type Chain } from "@wagmi/chains";
+import { type Config, type ContractConfig, defineConfig } from "@wagmi/cli";
+import { react, actions } from "@wagmi/cli/plugins";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -25,7 +26,7 @@ const readArtifacts = async (viemChainName: string, hardhatChainName?: string) =
       const fileContent = await readFile(filePath, "utf-8");
       const jsonContent = JSON.parse(fileContent);
       results.push({
-        name,
+        name: name,
         address: {
           [chain.id]: jsonContent.address as `0x{string}`,
         },
@@ -37,7 +38,7 @@ const readArtifacts = async (viemChainName: string, hardhatChainName?: string) =
 };
 
 const getConfig = async (): Promise<Config> => {
-  const deployment = process.env.REACT_APP_DEPLOYMENT ?? "devnet";
+  const deployment = process.env.NEXT_PUBLIC_APP_DEPLOYMENT ?? "devnet";
 
   let viemNetwork: string;
   let hardhatNetwork: string;
@@ -67,4 +68,10 @@ const getConfig = async (): Promise<Config> => {
   };
 };
 
-export default defineConfig(getConfig);
+type MaybeArray<T> = T | T[];
+
+type MaybePromise<T> = T | Promise<T>;
+
+const config: MaybeArray<Config> | (() => MaybePromise<MaybeArray<Config>>) = defineConfig(getConfig);
+
+export default config;

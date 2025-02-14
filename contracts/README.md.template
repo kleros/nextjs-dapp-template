@@ -1,6 +1,6 @@
-# @kleros/governor-v2-contracts
+# @kleros/nextjs-dapp-template-contracts
 
-Smart contracts for GovernorV2
+Smart contracts
 
 ## Deployments
 
@@ -77,7 +77,7 @@ yarn hardhat node --tags nothing
 **Shell 2: the deploy script**
 
 ```bash
-yarn deploy --network localhost --tags GovernorV2
+yarn deploy --network localhost --tags NextjsDappTemplate
 ```
 
 #### 2. Deploy to a Public Network Fork
@@ -101,7 +101,7 @@ yarn deploy-testnet-fork
 #### 3. Deploy to Public Testnets
 
 ```bash
-yarn deploy --network arbitrumSepolia --tags GovernorV2
+yarn deploy --network arbitrumSepolia --tags NextjsDappTemplate
 ```
 
 The deployed addresses should be displayed to the screen after the deployment is complete. If you missed them, you can always go to the `deployments/<network>` directory and look for the respective file.
@@ -115,7 +115,7 @@ Same steps as above but append `Devnet` to the `--network` parameter.
 **Shell 1: the node**
 
 ```bash
-yarn hardhat node --tags GovernorV2
+yarn hardhat node --tags NextjsDappTemplate
 ```
 
 **Shell 2: the test scripts**

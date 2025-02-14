@@ -1,11 +1,11 @@
 {
-  "name": "@kleros/governor-v2-tsconfig",
-  "version": "2.0.0",
+  "name": "@kleros/nextjs-dapp-template-tsconfig",
+  "version": "0.0.0",
   "private": true,
   "files": [
     "base.json"
   ],
   "devDependencies": {
-    "@kleros/governor-v2-eslint-config": "*"
+    "@kleros/nextjs-dapp-template-eslint-config": "*"
   }
 }
